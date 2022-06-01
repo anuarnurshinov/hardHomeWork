@@ -1,62 +1,24 @@
-let lang = "en"
-let week = [
-    [
-        "Понедельник", "Вторник", "Среда",
-        "Четверг", "Пятница", "Суббота",
-        "Воскресенье",
-    ],
-    [
-        "Monday", "Tuesday", "Wednesday",
-        "Thursday", "Friday", "Saturday",
-        "Sunday"
-    ],
-];
+let randomNumber = Math.random(1);
+let phrase = `Давно выяснено, что при оценке 
+дизайна и композиции читаемый текст 
+мешает сосредоточиться. Lorem Ipsum 
+используют потому, что тот обеспечивает 
+более или менее стандартное заполнение 
+шаблона, а также реальное распределение 
+букв и пробелов в абзацах, которое не 
+получается при простой дубликации 
+"Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.."`
 
-
-// Решение с помощью многомерного массива
-(lang == "ru") ?
-    week.splice(-1, 1) :
-    week.splice(0, 1);
-console.log(week);
-
-// Функции для switch и if
-function englishDaysPusher(arr) {
-    arr.length = 0;
-    arr.push(
-        "Monday", "Tuesday", "Wednesday",
-        "Thursday", "Friday", "Saturday",
-        "Sunday")
+function stringCutter(str) {
+    if (typeof (str) != "string") {
+        alert('Это не строка')
+    }
+    else {
+        str.trim()
+        if (str.length > 30) {
+            alert(str.substring(0, 30) + '...')
+        }
+    }
 }
-function russianDaysPusher(arr) {
-    arr.length = 0;
-    arr.push(
-        "Понедельник", "Вторник", "Среда",
-        "Четверг", "Пятница", "Суббота",
-        "Воскресенье")
-}
-
-
-// Решение с помощью if
-if (lang == "ru") {
-    russianDaysPusher(week)
-    console.log(week)
-}
-else if (lang == "en") {
-    englishDaysPusher(week)
-    console.log(week)
-}
-
-
-// Решение с помощью switch
-switch (lang) {
-    case "ru":
-        russianDaysPusher(week)
-        console.log(week)
-        break;
-    case "en":
-        englishDaysPusher(week)
-        console.log(week)
-        break;
-}
-
-
+stringCutter(phrase)
+stringCutter(randomNumber)

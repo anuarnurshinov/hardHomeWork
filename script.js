@@ -1,3 +1,5 @@
+
+//Первая задача с массивами
 let arr = [
     26,
     43,
@@ -18,3 +20,16 @@ const sorter = function (arr) {
 
 sorter(arr);
 
+//Вторая задача с простыми числами
+
+let n = 100;
+
+nextStep:
+for (let i = 2; i <= n; i++) {
+
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) continue nextStep;
+    }
+
+    console.log(i);
+}
